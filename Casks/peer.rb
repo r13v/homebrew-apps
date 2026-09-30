@@ -4,15 +4,15 @@ cask "peer" do
     run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{staged_path}}/peer"]
   end
 
-  version "0.1.9"
+  version "0.1.10"
 
   on_macos do
     on_arm do
-      sha256 "8c67f23e8a439810c76c70a62a1d5802fd50ab957c0ba541b78c617b588d9537"
+      sha256 "5c7bd1976326247958b4e6e6a4d543254f00ee155b1aa3fe39d6a4b4597e85a0"
       url "https://github.com/r13v/peer/releases/download/v#{version}/peer_darwin_arm64.tar.gz"
     end
     on_intel do
-      sha256 "7914511f69660758e80f90fe0761d3d4ff3b3dbef7d1a3ab3c2620d272fe6eca"
+      sha256 "19ed339bc687d83d3f378a8801c87507bb386d025f8257e1aa1b05e539c869fe"
       url "https://github.com/r13v/peer/releases/download/v#{version}/peer_darwin_amd64.tar.gz"
     end
   end
