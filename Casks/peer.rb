@@ -4,15 +4,15 @@ cask "peer" do
     run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{staged_path}}/peer"]
   end
 
-  version "0.1.56"
+  version "0.1.57"
 
   on_macos do
     on_arm do
-      sha256 "979c895d484a789f25742a8c41a65ebab19b27b48b027a7b17aa9bf054e591d5"
+      sha256 "baf14598d5162f20515ff6faee77a6e9a791eeeb4c8d9c5f551e4959a0e5b846"
       url "https://github.com/r13v/peer/releases/download/v#{version}/peer_darwin_arm64.tar.gz"
     end
     on_intel do
-      sha256 "ca99ada67100bf52852e84776ab1477d0792cc456cce2bc3e48791a3b59609b4"
+      sha256 "c69506b7bad8be197a5461003b10b9a4063a7a3fbfb043821df7d026cb44c5c6"
       url "https://github.com/r13v/peer/releases/download/v#{version}/peer_darwin_amd64.tar.gz"
     end
   end
@@ -24,8 +24,9 @@ cask "peer" do
   livecheck do
     skip "Auto-generated on release."
   end
+  depends_on :macos
 
   binary "peer"
 
-  # No zap stanza required
+  zap :not_required
 end
